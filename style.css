@@ -1,0 +1,121 @@
+@font-face {
+    font-family: 'Winco Black';
+    src: url(Winco-UltraBlack.ttf);
+} @font-face {
+    font-family: 'Winco Regular';
+    src: url(Winco-Regular.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} body, html {
+    -webkit-tap-highlight-color: transparent;
+    color: #000;
+    line-height: 1.7;
+    font-size: 1.075rem;
+    font-family: 'Winco Regular', sans-serif;
+} li {
+    list-style: none;
+} button {
+    border: none;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+    font-size: 1rem;
+} button:disabled {
+    color: #999;
+    cursor: not-allowed;
+} ::-webkit-scrollbar {
+    display: none;
+}
+
+/* ToDo Section */
+h1 {
+    text-align: center;
+    font-family: 'Winco Black';
+    font-size: 3rem;
+    margin-bottom: 1rem;
+} .container {
+    margin: 0 auto;
+    max-width: 1024px;
+} .up {
+    background: #fff;
+    height: 80dvh;
+} .down {
+    background: #F8F8F8;
+    height: 20dvh;
+    position: relative;
+}
+
+.all-todos {
+    display: flex;
+    overflow: auto;
+    height: 62dvh;
+    flex-direction: column;
+    overflow: auto;
+    gap: 0.5rem;
+} .all-todos li {
+    display: flex;
+    user-select: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.25rem 0.5rem;
+    transition: all 200ms;
+} .all-todos li p {
+    display: -webkit-box;
+    max-width: 80%;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: all 200ms;
+}
+
+.todo-action {
+    display: flex;
+    gap: 0.7rem;
+    align-items: center;
+} .todo-action > * {
+    transition: color 200ms;
+} .todo-action .complete-btn:hover {
+    color: #0F9D58;
+} .complete-btn:disabled:hover {
+    color: #aaa;
+} .todo-action .edit-btn:hover {
+    color: #4285F4;
+} .edit-btn:disabled:hover {
+    color: #aaa;
+} .todo-action .delete-btn:hover {
+    color: #DB4437;
+}
+
+.input-container {
+    position: absolute;
+    z-index: 999;
+    top: -20%;
+    left: 50%;
+    background: #fff;
+    transform: translateX(-50%);
+    border: 1px solid #999;
+    border-radius: 50px;
+    max-width: 300px;
+    display: flex;
+    padding: 0 1rem;
+    align-items: center;
+} .input-container input {
+    width: 100px;
+    transition: width 200ms;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 1rem 0.5rem;
+    font-size: 1rem;
+    font-family: inherit;
+} .input-container input:focus {
+    width: 280px;
+} .input-container span {
+    color: #777;
+    transition: color 200ms;
+}
